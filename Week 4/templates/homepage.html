@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Plum Picks</title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'styles/common.css')}}">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header">
+                        <div class="menu">
+                            <img src="https://drive.google.com/uc?export=view&id=1p9AMSuf9WBUp9f27oYFU4sStFK1YbO_5" id="logo">
+                        </div>
+                        <div class="menu">
+                            <button class="dropbtn"><a class="menu_link" href="NHL.html">NHL</a></button>
+                        </div>
+                        <div class="menu">
+                            <button class="dropbtn"><a class="menu_link" href="NFL.html">NFL</a></button>
+                        </div>
+                        <div class="menu">
+                            <button class="dropbtn"><a class="menu_link" href="NBA.html">NBA</a></button>
+                        </div>
+                        <div class="menu">
+                            <button class="dropbtn"><a class="menu_link" href="MLB.html">MLB</a></button>
+                        </div>
+                        <div class="menu">
+                            <button class="dropbtn"><a class="menu_link" href="Golf.html">Golf</a></button>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn">Other Sports</button>
+                            <div class="dropdown-content">
+                              <a href="Soccer.html">Soccer</a>
+                              <a href="Lacrosse.html">Lacrosse</a>
+                              <a href="CombatSports.html">Combat Sports</a>
+                              <a href="Cricket.html">Cricket</a>
+                              <a href="Rugby.html">Rugby</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header2">
+                        <div class="menu">
+                            <button class="dropbtn2">HOME</button>
+                        </div>
+                        <div class="menu" id = "create_post">
+                            <button class="dropbtn3"><a class="btn btn-dark" href="/postpage">Create Post</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-8" id="posts">
+                        {% if post %}
+                            {% for item in post %}
+                                <br>
+                                <p class = "title">{{item.title}}</p>
+                                <p class = "subtitle">{{item.subtitle}}</p>
+                                <p class = "content">{{item.content}}</p>
+                                <p class = "author">- {{item.author}}</p>
+                                <br>
+                                <hr>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

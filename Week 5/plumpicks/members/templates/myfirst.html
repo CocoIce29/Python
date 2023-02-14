@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<link rel="stylesheet" href="{% static 'global.css' %}">
+
+<body>
+
+<h1>Hello World!</h1>
+<p>Welcome to my first Django project!</p>
+
+{% with lastname="Allcroft" %}
+<h1>Hello , {{firstname}} {{lastname}}, how are you?</h1>
+{%endwith%}
+
+<ul>
+    {% for x in mymembers %}
+    <li>{{x.firstname}}</li>
+    {% endfor %}
+</ul>
+
+{% if greeting == 1%}
+    <h1>Hello</h1>
+{% else %}
+    <h1>Bye</h1>
+{% endif %}
+</body>
+</html>
